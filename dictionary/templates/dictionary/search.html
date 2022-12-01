@@ -1,10 +1,17 @@
 {% extends 'dictionary/base.html' %}
 {% block content %}
-<h4>{{word}}</h4>
-<p>{{meanings}}</p>
-<hr>
-<p><b>Synonyms</b>:{{synonym}}</p>
-<hr>
-<p><b>Antonyms</b>:{{antonym}}</p>
+<h3><strong>Word:</strong>{{ word }}</h3>
+{% for key, values in meanings.items %}
+    <h5>{{ key }}:</h5>
+    {% for value in values %}
+    <ul>
+        <li>{{ value }}</li>
+    </ul>
+    {% endfor %}
 
+{% endfor %}
+
+
+print(meanings.items[i])
 {% endblock %}
+
